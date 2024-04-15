@@ -5,6 +5,10 @@
     <meta charset="utf-8" />
   </head>
   <body>
+    <video autoplay muted loop id="video-background">
+      <source src="https://cdn.pixabay.com/video/2020/06/16/42197-429661458_large.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+  </video>
 	<div id="container">
 		<!-- Edit the letter attr to: N, E, T, F, L, I or X -->
 		   <netflixintro letter="L">
@@ -182,7 +186,20 @@
 		</div>
     <div id="container2">
       <button onclick="showPage('ufo')">
-        UFO
+        Mensajito de la semana
+        <svg class="icon-1">
+          <use xlink:href="#icon-1"></use>
+        </svg>
+        <svg class="icon-2">
+          <use xlink:href="#icon-2"></use>
+        </svg>
+        <svg class="icon-3">
+          <use xlink:href="#icon-3"></use>
+        </svg>
+      </button>
+
+      <button onclick="showPage('eres')">
+        Eres...
         <svg class="icon-1">
           <use xlink:href="#icon-1"></use>
         </svg>
@@ -197,15 +214,30 @@
   </body>
   <style type="text/css">
     body {
-      background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/68397/forest-fly-agaric-fog-moss-fliegenpilz.jpg");
-      background-repeat: no-repeat;
-      background-size: cover;
-	  background-position: center;
+      overflow: hidden; /* Prevent scroll bars */
+            background-color: black; /* Set a black background */
       display: flex;
-      margin: 0px;
+      margin: 0;
+            padding: 0;
       width: 100%;
       height: 100dvh;
     }
+    #video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensure the video covers the entire viewport */
+            z-index: -1; /* Place the video behind other content */
+            object-position: left;
+        }
+
+        @media screen and (max-width: 768px) {
+            #video-background {
+                display: none; /* Hide the video on smaller screens */
+            }
+        }
     #container2 {
       width: 100%;
       height: 100%;
@@ -213,6 +245,7 @@
       justify-content: center;
       justify-items: center;
       align-items: center;
+      gap: 10px;
     }
 
     #container2 button {
@@ -220,7 +253,7 @@
       height: min-content;
       position: relative;
       padding: 15px 45px;
-      background: #bf2101d9;
+      background: #2d64a6;
       font-size: 17px;
       font-weight: 500;
       color: #fff;
@@ -231,19 +264,6 @@
       animation: wind 2s ease-in-out infinite;
     }
 
-    button:hover {
-      border: 1px solid #ffffff;
-      background: linear-gradient(
-        85deg,
-        #bf2101d9,
-        #bf3216d9,
-        #fe7458d9,
-        #ffa260,
-        #fac39c
-      );
-      animation: wind 2s ease-in-out infinite;
-      transition: all;
-    }
     .icon-1,
     .icon-2,
     .icon-3 {
