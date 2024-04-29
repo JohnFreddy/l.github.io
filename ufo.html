@@ -30,8 +30,11 @@
       </button>
       <!--   <div class="text">Click me</div> -->
       <div class="card">
-          <h3 class="letters">Mi You ❤</h3>
-          <p class="letters">Sin importar las adversidades, la distancia o el tiempo, nunca abandonaré el deseo de ver que dibujes esa hermosa sonrisa en tu rostro... y si soy yo el que pueda ocasionarla, ¡mucho mejor! :3</p>
+          <h3 class="letters">Todo un Bombón ❤</h3>
+          <p class="letters">Eres la personificación de todo lo que está bien: humilde, dedicada a tus sueños, brillante, divina y mucho más... Gracias por compartir tu tiempo conmigo, por darme el placer de seguir aprendiendo cada día contigo y por hacerme sentir el cálido cariño que me brindas desde la distancia.</p>
+          <p class="letters">Ten una semana maravillosa, tanto como tú.</p>
+          <p class="letters">#LucyLaMejorMicrobiologaDelMundoMundial</p>
+          <img id="imagen" src="https://fbi.cults3d.com/uploaders/18750849/illustration-file/2eb14f6e-e102-4f6b-8c03-c2c141afb74e/BLOSSOMPNG.png" style="width: 50px;">
           <div class="borderBottom"></div>
       </div>
   </div>
@@ -53,6 +56,10 @@ body {
   background: radial-gradient(ellipse at bottom, #18212d 0%, #0d0e16 100%);
   height: 100vh;
   overflow: hidden;
+}
+
+#imagen {
+  opacity: 0;
 }
 
 .content {
@@ -367,6 +374,7 @@ letters.forEach((a) => {
 let btn = document.querySelector(".icon");
 let span = document.querySelectorAll(".letters span");
 let border = document.querySelector(".borderBottom");
+let imagen = document.getElementById("imagen");
 
 let flag = true;
 
@@ -396,6 +404,8 @@ btn.addEventListener("click", function () {
                 x.classList.add("fallUp");
             }, 100 * index);
         });
+        imagen.classList.add("fallUp");
+        imagen.classList.remove("fallDown");
     } else {
         border.classList.remove("borderBottomAnimIn");
         border.classList.add("borderBottomAnimOut");
@@ -416,6 +426,8 @@ btn.addEventListener("click", function () {
                 x.classList.add("fallDown");
             }, 50 * index);
         });
+        imagen.classList.add("fallDown");
+        imagen.classList.remove("fallUp");
     }
 });
 
