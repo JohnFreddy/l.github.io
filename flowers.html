@@ -131,7 +131,7 @@
     <div id="letters">
         <iframe style="border-radius:12px" 
         src="https://open.spotify.com/embed/track/0ofSkRs8fZFvF23FHGFCgr?utm_source=generator&theme=0" 
-        width="80%" height="352" frameBorder="0" allowfullscreen="" 
+        width="80%" height="352" frameBorder="0" allowfullscreen="true" 
         allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
     </div>
     <div id="d2">
@@ -373,7 +373,7 @@ html {
 
 #container {
     width: 100dvw;
-    height: 100dvh;
+    height: 100%;
     display: flex;
     flex-direction: column;
 }
@@ -382,9 +382,10 @@ html {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    height: 160px;
+    height: auto;
     width: 100%;
     padding: 20px;
+    max-height: 25%;
 }
 
 .button { 
@@ -429,11 +430,7 @@ body {
       width: 100%;
       height: 100%;
       color: white;
-        margin: 0 1%;
-        font-size: xxx-large;
-        text-align: center;
       z-index: 2;
-      opacity: 0;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -453,8 +450,6 @@ body {
         )
         drop-shadow(-0.6vmin 0vmin 1.4vmin var(--system-color-stroke))
         drop-shadow(0vmin 0.8vmin 1.4vmin var(--system-color-stroke));
-
-      animation: font-animate 1.15s linear 0.5s forwards;
 
       & iframe {
         display: flex;
