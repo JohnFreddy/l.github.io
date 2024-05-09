@@ -2,388 +2,365 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <title>Lucy</title>
-    <style>
-        html,
-        body {
-            margin: 0;
-            width: 100%;
-            height: 100%;
-            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-            background-color: #e2cfc7;
-        }
+  <meta charset="utf-8" />
+  <title>Lucy</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/css-doodle/0.39.1/css-doodle.min.js"></script>
 
-        .content {
-            width: 100vw;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .slider-wrapper {
-            font-size: 40px;
-            color: #5c5c5c;
-            font-weight: bold;
-            text-transform: uppercase;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .slider {
-            height: 50px;
-            padding-left: 15px;
-            overflow: hidden;
-        }
-
-        .slider div {
-            color: #fff;
-            height: 50px;
-            margin-bottom: 50px;
-            padding: 2px 15px;
-            text-align: center;
-            box-sizing: border-box;
-        }
-
-        .slider-text1 {
-            background: lightgreen;
-            animation: slide 8s linear infinite;
-        }
-
-        .slider-text2 {
-            background: skyblue;
-        }
-
-        .slider-text3 {
-            background: lightcoral;
-        }
-
-        @keyframes slide {
-            0% {
-                margin-top: -300px;
-            }
-
-            5% {
-                margin-top: -200px;
-            }
-
-            33% {
-                margin-top: -200px;
-            }
-
-            38% {
-                margin-top: -100px;
-            }
-
-            66% {
-                margin-top: -100px;
-            }
-
-            71% {
-                margin-top: 0px;
-            }
-
-            100% {
-                margin-top: 0px;
-            }
-        }
-
-        button {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  padding: 12px 35px;
-  background: #fec195;
-  font-size: 17px;
-  font-weight: 500;
-  color: #181818;
-  border: 3px solid #fec195;
-  border-radius: 8px;
-  box-shadow: 0 0 0 #fec1958c;
-  transition: all 0.3s ease-in-out;
-  cursor: pointer;
-}
-
-.star-1 {
-  position: absolute;
-  top: 20%;
-  left: 20%;
-  width: 25px;
-  height: auto;
-  filter: drop-shadow(0 0 0 #fffdef);
-  z-index: -5;
-  transition: all 1s cubic-bezier(0.05, 0.83, 0.43, 0.96);
-}
-
-.star-2 {
-  position: absolute;
-  top: 45%;
-  left: 45%;
-  width: 15px;
-  height: auto;
-  filter: drop-shadow(0 0 0 #fffdef);
-  z-index: -5;
-  transition: all 1s cubic-bezier(0, 0.4, 0, 1.01);
-}
-
-.star-3 {
-  position: absolute;
-  top: 40%;
-  left: 40%;
-  width: 5px;
-  height: auto;
-  filter: drop-shadow(0 0 0 #fffdef);
-  z-index: -5;
-  transition: all 1s cubic-bezier(0, 0.4, 0, 1.01);
-}
-
-.star-4 {
-  position: absolute;
-  top: 20%;
-  left: 40%;
-  width: 8px;
-  height: auto;
-  filter: drop-shadow(0 0 0 #fffdef);
-  z-index: -5;
-  transition: all 0.8s cubic-bezier(0, 0.4, 0, 1.01);
-}
-
-.star-5 {
-  position: absolute;
-  top: 25%;
-  left: 45%;
-  width: 15px;
-  height: auto;
-  filter: drop-shadow(0 0 0 #fffdef);
-  z-index: -5;
-  transition: all 0.6s cubic-bezier(0, 0.4, 0, 1.01);
-}
-
-.star-6 {
-  position: absolute;
-  top: 5%;
-  left: 50%;
-  width: 5px;
-  height: auto;
-  filter: drop-shadow(0 0 0 #fffdef);
-  z-index: -5;
-  transition: all 0.8s ease;
-}
-
-button:hover {
-  background: #323232;
-  color: #fec195;
-  box-shadow: 0 0 25px #fec1958c;
-}
-
-button:hover .star-1 {
-  position: absolute;
-  top: -80%;
-  left: -30%;
-  width: 25px;
-  height: auto;
-  filter: drop-shadow(0 0 10px #fffdef);
-  z-index: 2;
-}
-
-button:hover .star-2 {
-  position: absolute;
-  top: -25%;
-  left: 10%;
-  width: 15px;
-  height: auto;
-  filter: drop-shadow(0 0 10px #fffdef);
-  z-index: 2;
-}
-
-button:hover .star-3 {
-  position: absolute;
-  top: 55%;
-  left: 25%;
-  width: 5px;
-  height: auto;
-  filter: drop-shadow(0 0 10px #fffdef);
-  z-index: 2;
-}
-
-button:hover .star-4 {
-  position: absolute;
-  top: 30%;
-  left: 80%;
-  width: 8px;
-  height: auto;
-  filter: drop-shadow(0 0 10px #fffdef);
-  z-index: 2;
-}
-
-button:hover .star-5 {
-  position: absolute;
-  top: 25%;
-  left: 115%;
-  width: 15px;
-  height: auto;
-  filter: drop-shadow(0 0 10px #fffdef);
-  z-index: 2;
-}
-
-button:hover .star-6 {
-  position: absolute;
-  top: 5%;
-  left: 60%;
-  width: 5px;
-  height: auto;
-  filter: drop-shadow(0 0 10px #fffdef);
-  z-index: 2;
-}
-
-.fil0 {
-  fill: #fffdef;
-}
-span{
-    margin-left: 8px;
-}
-    </style>
 </head>
 
 <body>
-    <button onclick="showPage('index')">
-        Home
-        <div class="star-1">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            xml:space="preserve"
-            version="1.1"
-            style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
-            viewBox="0 0 784.11 815.53"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-          >
-            <defs></defs>
-            <g id="Layer_x0020_1">
-              <metadata id="CorelCorpID_0Corel-Layer"></metadata>
-              <path
-                class="fil0"
-                d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
-              ></path>
-            </g>
-          </svg>
-        </div>
-        <div class="star-2">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            xml:space="preserve"
-            version="1.1"
-            style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
-            viewBox="0 0 784.11 815.53"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-          >
-            <defs></defs>
-            <g id="Layer_x0020_1">
-              <metadata id="CorelCorpID_0Corel-Layer"></metadata>
-              <path
-                class="fil0"
-                d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
-              ></path>
-            </g>
-          </svg>
-        </div>
-        <div class="star-3">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            xml:space="preserve"
-            version="1.1"
-            style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
-            viewBox="0 0 784.11 815.53"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-          >
-            <defs></defs>
-            <g id="Layer_x0020_1">
-              <metadata id="CorelCorpID_0Corel-Layer"></metadata>
-              <path
-                class="fil0"
-                d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
-              ></path>
-            </g>
-          </svg>
-        </div>
-        <div class="star-4">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            xml:space="preserve"
-            version="1.1"
-            style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
-            viewBox="0 0 784.11 815.53"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-          >
-            <defs></defs>
-            <g id="Layer_x0020_1">
-              <metadata id="CorelCorpID_0Corel-Layer"></metadata>
-              <path
-                class="fil0"
-                d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
-              ></path>
-            </g>
-          </svg>
-        </div>
-        <div class="star-5">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            xml:space="preserve"
-            version="1.1"
-            style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
-            viewBox="0 0 784.11 815.53"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-          >
-            <defs></defs>
-            <g id="Layer_x0020_1">
-              <metadata id="CorelCorpID_0Corel-Layer"></metadata>
-              <path
-                class="fil0"
-                d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
-              ></path>
-            </g>
-          </svg>
-        </div>
-        <div class="star-6">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            xml:space="preserve"
-            version="1.1"
-            style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
-            viewBox="0 0 784.11 815.53"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-          >
-            <defs></defs>
-            <g id="Layer_x0020_1">
-              <metadata id="CorelCorpID_0Corel-Layer"></metadata>
-              <path
-                class="fil0"
-                d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
-              ></path>
-            </g>
-          </svg>
-        </div>
-      </button>
-      
-    <div class="content">
-        <div class="slider-wrapper">
-            Eres mi
-            <div class="slider">
-                <div class="slider-text1">Cientifica loca</div>
-                <div class="slider-text2">Cielo</div>
-                <div class="slider-text3">You</div>
-            </div>
-            <span>❤</span>
-        </div>
-    </div>
+  <button onclick="showPage('index')">
+    Home
+  </button>
+  <css-doodle>
+    :doodle {
+      flex: none;
+      @grid: 25x1;
+      @size: 100dvw 40dvh;
+      overflow: hidden;
+      position: absolute;
+      bottom: 0px;
+    }
+  
+    --colors: (#75b9be,#696d7d,#d72638,#f49d37,#140f2d);
+    --color-1: @p(--colors);
+    --color-2: @P;
+    --transform: translateY(@r(2, 90)%);
+    --size: 30px;
+    transform: var(--transform) rotate(0deg);
+    transform-origin: 50% 100%;
+  
+    @random(0.5) {
+      animation: swing @r(3, 5)s ease infinite alternate both;
+    }
+    @random(0.5) {
+      animation: swingLeft @r(3, 5)s ease infinite alternate both;
+    }
+  
+    @keyframes swing {
+      0% {
+        transform: var(--transform) rotate(0deg);
+      }
+      100% {
+        transform: var(--transform) rotate(1deg);
+      }
+    }
+  
+    @keyframes swingLeft {
+      0% {
+        transform: var(--transform) rotate(0deg);
+      }
+      100% {
+        transform: var(--transform) rotate(-1deg);
+      }
+    }
+  
+    ::after {
+      content: "";
+      position: absolute;
+      top: -15px;
+      left: calc(50% - var(--size) / 2);
+      width: var(--size);
+      height: var(--size);
+      background: @p(
+        radial-gradient(@stripe(@m4(var(--color-@pn(1, 2))), transparent 29.7%)),
+        @doodle(
+          @grid: 1 / 100%;
+          ::after {
+            content: "@p(✿,🌷,❀,❃,❊)";
+            position: absolute;
+            top: -4px;
+            left: 50%;
+            transform: translate3d(-50%, 0, 0);
+            font-size: 40px;
+            color: transparent;
+            background-image: radial-gradient(var(--color-1) 20%, var(--color-2) calc(20% + 0.5px));
+            -webkit-background-clip: text;
+          }
+        ),
+        @doodle(
+          @grid: 1 / 100%;
+          ::after {
+            content: "@p(🌸,🌼)";
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate3d(-50%, 0, 0);
+            font-size: 28px;
+            color: transparent;
+            background-image: radial-gradient(var(--color-1) 20%, var(--color-2) calc(20% + 0.5px));
+            -webkit-background-clip: text;
+          }
+        )
+      );
+    }
+  
+    background: @doodle(
+      @grid: 1x40;
+      background: linear-gradient(90deg, @stripe(transparent, @p(--colors) 2px, transparent));
+  
+      @nth(1, 2) {
+        ::before { display: none; }
+      }
+  
+      @random(.5) {
+        ::before {
+          content: "";
+          @place: 10px center;
+          @size: 50% 100%;
+          border-radius: 0 100% 0 100%;
+          background: @p(--colors);
+          -webkit-box-reflect: @p(right, initial);
+        }
+      }
+    );
+  </css-doodle>
 
-    <script>
-        function showPage(page) {
+  <div class="content">
+    <div class="carousel">
+      <div class="carousel__container">
+        <p>Eres mi </p>
+        <ul class="carousel__content">
+
+          <li style="color: #A0805C;">You ♥</li>
+          <li style="color: #1899D6;">Cielo</li>
+          <li style="color: #429d18;">Científica loca</li>
+          <li style="color: #d61825;">Emperatriz</li>
+          <li style="color: #d6a618;">Reina</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("click", function () {
+      document.querySelectorAll("css-doodle").forEach(function (o) {
+        o.update();
+      });
+    });
+    document.addEventListener("touchstart", function () {
+      document.querySelectorAll("css-doodle").forEach(function (o) {
+        o.update();
+      });
+    });
+    
+    function showPage(page) {
       // Redirect to the second page
       window.location.href = page + ".html";
     }
-    </script>
+    carousel = (function () {
+      const box = document.querySelector('.carousel');
+      const items = box.querySelectorAll('.carousel__content li');
+      const amount = items.length;
+
+      let counter = 0;
+
+      let prevprev;
+      let prev;
+      let current;
+      let next;
+      let nextnext;
+
+      box.classList.add('carousel_active');
+
+      let interval = setInterval(navigate, 4000);
+
+      function navigate() {
+        if (prevprev) { prevprev.classList.remove('prevprev_text'); }
+        if (prev) { prev.classList.remove('prev_text'); }
+        if (current) { current.classList.remove('current_text'); }
+        if (next) { next.classList.remove('next_text'); }
+        if (nextnext) { nextnext.classList.remove('nextnext_text'); }
+
+        if (counter === 0) {
+          prev = items[amount - 1];
+        } else {
+          prev = items[counter - 1];
+        }
+
+        if (counter === 0) {
+          prevprev = items[amount - 2];
+        } else if (counter === 1) {
+          prevprev = items[amount - 1]
+        } else {
+          prevprev = items[counter - 2]
+        }
+
+        if (counter === amount - 2) {
+          nextnext = items[0];
+        } else if (counter === amount - 1) {
+          nextnext = items[1];
+        } else {
+          nextnext = items[counter + 2];
+        }
+
+        current = items[counter];
+
+        if (counter === amount - 1) {
+          next = items[0];
+        } else next = items[counter + 1];
+
+        counter += 1;
+
+        if (counter === (amount)) {
+          counter = 0;
+        }
+
+        if (prevprev) { prevprev.classList.add('prevprev_text'); }
+        prev.classList.add('prev_text');
+        current.classList.add('current_text');
+        next.classList.add('next_text');
+        if (nextnext) { nextnext.classList.add('nextnext_text') }
+      }
+
+    })();
+
+  </script>
+
+  <style>
+    body {
+      margin: 0px;
+    }
+    .carousel {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 80vh;
+    }
+
+    .carousel__container {
+      font-family: "Times New Roman", serif;
+      height: 170px;
+    }
+
+    .carousel__container p {
+      font-size: 90px;
+      margin: 50px 0;
+      color: #A0805C;
+      position: absolute;
+      padding: 0;
+      vertical-align: middle;
+    }
+
+    .carousel__content {
+      width: 830px;
+      margin: 0;
+      padding: 0;
+      position: relative;
+    }
+
+    .carousel__content li {
+      font-size: 90px;
+      margin: 0;
+      padding: 0;
+      text-transform: lowercase;
+      opacity: 0;
+      color: #A0805C;
+      list-style: none;
+    }
+
+    .carousel_active li {
+      margin-left: 300px;
+      position: absolute;
+      opacity: 0;
+      transition: 1s;
+    }
+
+    .carousel_active li.prevprev_text {
+      top: -50px;
+    }
+
+    .carousel_active li.prev_text {
+      top: -30px;
+      opacity: 0.5;
+      transition: 1s;
+    }
+
+    .carousel_active li.current_text {
+      top: 50px;
+      opacity: 1;
+      transition: 1s;
+    }
+
+    .carousel_active li.next_text {
+      top: 130px;
+      opacity: 0.5;
+      transition: 1s;
+    }
+
+    .carousel_active li.nextnext_text {
+      top: 150px;
+    }
+
+   
+
+    button {
+ appearance: button;
+ background-color: #1899D6;
+ border: solid transparent;
+ border-radius: 16px;
+ border-width: 0 0 4px;
+ box-sizing: border-box;
+ color: #FFFFFF;
+ cursor: pointer;
+ display: inline-block;
+ font-size: 15px;
+ font-weight: 700;
+ letter-spacing: .8px;
+ line-height: 20px;
+ margin: 0;
+ outline: none;
+ overflow: visible;
+ padding: 13px 19px;
+ text-align: center;
+ text-transform: uppercase;
+ touch-action: manipulation;
+ transform: translateZ(0);
+ transition: filter .2s;
+ user-select: none;
+ -webkit-user-select: none;
+ vertical-align: middle;
+ white-space: nowrap;
+ position: absolute;
+ top: 10px;
+ left: 10px;
+}
+
+button:after {
+ background-clip: padding-box;
+ background-color: #1CB0F6;
+ border: solid transparent;
+ border-radius: 16px;
+ border-width: 0 0 4px;
+ bottom: -4px;
+ content: "";
+ left: 0;
+ position: absolute;
+ right: 0;
+ top: 0;
+ z-index: -1;
+}
+
+button:main, button:focus {
+ user-select: auto;
+}
+
+button:hover:not(:disabled) {
+ filter: brightness(1.1);
+}
+
+button:disabled {
+ cursor: auto;
+}
+
+button:active:after {
+ border-width: 0 0 0px;
+}
+
+button:active {
+ padding-bottom: 10px;
+}
+  </style>
 </body>
 
 </html>
