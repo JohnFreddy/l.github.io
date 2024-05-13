@@ -122,11 +122,26 @@
         <p>Eres mi </p>
         <ul class="carousel__content">
 
-          <li style="color: #A0805C;">You ♥</li>
-          <li style="color: #1899D6;">Cielo</li>
-          <li style="color: #429d18;">Científica loca</li>
-          <li style="color: #d61825;">Emperatriz</li>
-          <li style="color: #d6a618;">Reina</li>
+          <li style="color: #A0805C;">You
+            <div class="extra">
+              <img src="https://images.squarespace-cdn.com/content/v1/64b5d787e3f77b64ccf2d596/84f98b15-7973-49bb-9891-5cf0283a026d/transparent-heart-sticker-purple-heart-glowing-xxnznlxrwufjas9x.gif?format=100w" width="80px">
+            </div>
+          </li>
+          <li style="color: #1899D6;">Cielo
+            <div class="extra">
+              <img src="https://i.giphy.com/JWP26IkaoJ91paqxV2.webp" width="80px">
+            </div>
+          </li>
+          <li style="color: #429d18;">Científica loca
+            <div class="extra">
+              <img src="https://i.pinimg.com/736x/1f/50/98/1f50988f4c9a03573ddcbfce2c09bd87.jpg" width="80px">
+            </div>
+          </li>
+          <li style="color: #d61825;">Emperatriz
+            <div class="extra">
+              <img src="https://www.creativefabrica.com/wp-content/uploads/2023/02/06/Queen-Of-Hearts-Chibi-Graphic-60190636-1.png" width="80px">
+            </div>
+          </li>
         </ul>
       </div>
     </div>
@@ -160,12 +175,13 @@
       let current;
       let next;
       let nextnext;
-
+      console.log('entra')
       box.classList.add('carousel_active');
-
+      navigate()
       let interval = setInterval(navigate, 4000);
 
       function navigate() {
+        console.log('navi')
         if (prevprev) { prevprev.classList.remove('prevprev_text'); }
         if (prev) { prev.classList.remove('prev_text'); }
         if (current) { current.classList.remove('current_text'); }
@@ -220,6 +236,12 @@
   <style>
     body {
       margin: 0px;
+    }
+
+    .extra {
+      position: absolute;
+      top: 5px;
+      right: -92px;
     }
     .carousel {
       display: flex;
