@@ -7,7 +7,6 @@
 </head>
 <body>
     <button onclick="showPage('index')" class="button">Home</button>
-
 <div id="container">
     <div id="d1">
         <svg id="plant-left" viewBox="0 0 1026 715" xmlns="http://www.w3.org/2000/svg">
@@ -129,9 +128,10 @@
     </div>
     <div id="letters">
 
-        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/2xXNLutYAOELYVObYb1C1S?utm_source=generator&theme=0" 
-        width="80%" height="352" frameBorder="0" allowfullscreen=""
+        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/5uu2OCGGrTRS1sIvlMgKwe?utm_source=generator&theme=0" 
+        width="80%" height="300" frameBorder="0" allowfullscreen=""
         allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        <span>For ever and ever. Mi You</span>
     </div>
     <div id="d2">
         <svg id="plant-left" viewBox="0 0 1026 715" xmlns="http://www.w3.org/2000/svg">
@@ -375,6 +375,7 @@ html {
     height: 100%;
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 #d1, #d2 {
@@ -433,6 +434,7 @@ body {
       display: flex;
       justify-content: center;
       align-items: center;
+      flex-direction: column;
 
       -webkit-fill: var(--system-color-typo);
       fill: var(--system-color-typo);
@@ -452,6 +454,11 @@ body {
 
       & iframe {
         display: flex;
+      }
+
+      span {
+        margin-top: 40px;
+        font-size: xx-large;
       }
     }
 
