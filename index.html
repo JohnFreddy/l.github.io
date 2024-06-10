@@ -5,11 +5,13 @@
     <meta charset="utf-8" />
   </head>
   <body>
+   
     <video autoplay muted loop id="video-background">
-      <source src="https://cdn.pixabay.com/video/2023/08/21/177001-856646648_large.mp4" type="video/mp4">
+      <source src="https://cdn.pixabay.com/video/2023/10/10/184427-873181614_large.mp4" type="video/mp4">
       Your browser does not support the video tag.
   </video>
 	<div id="container">
+    
 		<!-- Edit the letter attr to: N, E, T, F, L, I or X -->
 		   <netflixintro letter="L">
 			<div class="helper-1">
@@ -185,6 +187,7 @@
 		  </netflixintro>
 		</div>
     <div id="container2">
+      <h1 class="smallMe">¿Vamos por un café?</h1>
       <button onclick="showPage('ufo')">
         Mensajito de la semana
         <svg class="icon-1">
@@ -237,6 +240,14 @@
       width: 100%;
       height: 100dvh;
     }
+    .smallMe {
+      position: absolute;
+      z-index: 99;
+      top: 10px;
+      right: 10px;
+      font-family: cursive;
+      text-shadow: -1px 4px white;
+    }
     #video-background {
             position: fixed;
             top: 0;
@@ -245,7 +256,7 @@
             height: 100%;
             object-fit: cover; /* Ensure the video covers the entire viewport */
             z-index: -1; /* Place the video behind other content */
-            object-position: right;
+            object-position: center;
         }
 
         @media screen and (max-width: 768px) {
@@ -270,7 +281,7 @@
       height: min-content;
       position: relative;
       padding: 15px 45px;
-      background: #236282;
+      background: #7a3b2a;
       font-size: 17px;
       font-weight: 500;
       color: #fff;
