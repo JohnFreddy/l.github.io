@@ -8,13 +8,10 @@
   <body>
     <button class="button_top" onclick="showPage('index')">Home</button>
     <div class="letters">
-      <span class="mark">Te quiero</span><br>
-      Te quiero bajo mi propia voluntad, porque contigo encuentro la libertad de expresarme, de ser cursi, de ser honesto, de sentir, de ser yo. 
-      <br>Me siento orgulloso cuando superas cualquier reto, me siento útil cuando me pides ayuda, y es invaluable cuando, 
-      sin aviso, me dices que me quieres o me envías un videito contándome sobre tu vida. <br>
-Y por eso y mas, sin importar a dónde vayamos a parar, porque sin ser, <span class="mark">eres mucho más</span> y porque sin estar, 
-<span class="mark">estás</span>... jamás mi corazón te dejará de adorar.<br>
-<small>Ten una linda semana 😌</small>
+      <img src="./images/image2.jpg" class="imag">
+      Aunque pueda imaginarme mil citas perfectas, mil escenarios y mil cumplidos, hay un solo ser que al día de hoy les da sentido. <br>
+      Le pone un nombre y rostro a ese sueño de poder tenerla en mi regazo, mientras me doy cuenta de la fortuna que seria poder mirarla a los ojos y decirle que la quiero, no para una noche o para un ratito, sino para tomar su mano y aprender a conocernos. Saber que solo debo darle fruta a temperatura ambiente o que su color favorito es el rojo... saber qué la hace feliz, qué le duele o cómo ayudarla, cómo quererla, ser un equipo y... tener un perrito. <br>
+      Y no sé cómo empezó, pero quizás fue desde que me di cuenta de que su sonrisa es lo más bonito que jamás he escuchado. <br>
     </div>
     <canvas id="bgCanvas"></canvas>
   </body>
@@ -50,6 +47,13 @@ Y por eso y mas, sin importar a dónde vayamos a parar, porque sin ser, <span cl
       color: #ffffff91;
       font-family: sans-serif;
       background: #00000082;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .imag {
+      width: 150px;
     }
 
     .mark {
@@ -57,7 +61,7 @@ Y por eso y mas, sin importar a dónde vayamos a parar, porque sin ser, <span cl
     }
     @media (max-width: 600px) {
       .letters {
-        font-size: 6vw;
+        font-size: 4vw;
       }
     }
     button {
