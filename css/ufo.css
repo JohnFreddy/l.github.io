@@ -61,7 +61,21 @@ body {
   width: 100%;
   color: #ffffff82;
   text-align: center;
-  font-size: larger;
+  font-size: normal; /* Default font size for mobile */
+}
+
+@media (min-width: 768px) {
+  /* For tablets and larger screens */
+  .letters {
+    font-size: larger;
+  }
+}
+
+@media (min-width: 1024px) {
+  /* For desktop and larger screens */
+  .letters {
+    font-size: xx-large;
+  }
 }
 
 /*otHers================*/
