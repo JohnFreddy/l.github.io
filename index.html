@@ -8,7 +8,7 @@
   <body>
    
     <video autoplay muted loop id="video-background">
-      <source src="https://cdn.pixabay.com/video/2021/10/23/93017-638414221_large.mp4" type="video/mp4">
+      <source src="https://cdn.pixabay.com/video/2024/01/24/197931-906226441_large.mp4" type="video/mp4">
       Your browser does not support the video tag.
   </video>
 	<div id="container">
@@ -1391,25 +1391,39 @@
 }
   </style>
 
-  <script>
-
-	setTimeout(() => {
-		var doc1 = document.getElementById("container");
-		var doc2 = document.getElementById("container2");
-		if(doc1) {
-			doc1.style.display = 'none';
-		}
-		if(doc2) {
-			doc2.style.display = 'flex';
-		}
-	},5000)
-	
-
-    function showPage(page) {
-      // Redirect to the second page
-      window.location.href = page + ".html";
+<script>
+  // Check if the page has been loaded before
+  if (!sessionStorage.getItem('pageLoaded')) {
+    setTimeout(() => {
+      var doc1 = document.getElementById("container");
+      var doc2 = document.getElementById("container2");
+      if (doc1) {
+        doc1.style.display = 'none';
+      }
+      if (doc2) {
+        doc2.style.display = 'flex';
+      }
+      // Set the flag in sessionStorage to prevent loading again
+      sessionStorage.setItem('pageLoaded', 'true');
+    }, 5000);
+  } else {
+    // Skip the loading process and directly show the main content
+    var doc1 = document.getElementById("container");
+    var doc2 = document.getElementById("container2");
+    if (doc1) {
+      doc1.style.display = 'none';
     }
-  </script>
+    if (doc2) {
+      doc2.style.display = 'flex';
+    }
+  }
+
+  function showPage(page) {
+    // Redirect to the second page
+    window.location.href = page + ".html";
+  }
+</script>
+
 
   <!-- Define SVG symbols -->
   <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="display: none">
